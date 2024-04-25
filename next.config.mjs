@@ -6,7 +6,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   webpack: (config, options) => {
-    config.output.publicPath = 'http://localhost:3005/_next/';
+    config.output.publicPath = 'https://mf1-tawny.vercel.app/_next'; //http://localhost:3005/_next/ 
     config.plugins.push(
       new NextFederationPlugin({
         name: "Mf1",
