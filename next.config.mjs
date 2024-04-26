@@ -6,15 +6,14 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   webpack: (config, options) => {
-    // config.output.publicPath = 'https://mf1-tawny.vercel.app/_next'; // 'http://localhost:3005/_next/'
-    config.output.publicPath = 'http://localhost:3005/_next/'; // 'https://mf1-tawny.vercel.app/_next'
+    // config.output.publicPath = 'something'; // 'http://localhost:3006/_next/'
+    config.output.publicPath = 'http://localhost:3006/_next/'; // 'something'
     config.plugins.push(
       new NextFederationPlugin({
-        name: "structure",
+        name: "products",
         filename: "static/chunks/remoteEntry.js",
         exposes: {
-           './Header': "./src/components/Header.tsx",
-           './Footer': "./src/components/Footer.tsx",
+           './Products': "./src/pages/index.tsx",
         },
         remotes: {},
         shared: {
