@@ -11,11 +11,10 @@ const nextConfig = {
     config.output.publicPath = isProduction ?  'https://mf1-tawny.vercel.app/_next/' : 'http://localhost:3005/_next/';
     config.plugins.push(
       new NextFederationPlugin({
-        name: "structure",
+        name: "products",
         filename: "static/chunks/remoteEntry.js",
         exposes: {
-           './Header': "./src/components/Header.tsx",
-           './Footer': "./src/components/Footer.tsx",
+           './Products': "./src/pages/index.tsx",
         },
         remotes: {
           cart: isProduction ?  'https://mf-cart.vercel.app/remoteEntry.js' : `cart@http://localhost:3009/remoteEntry.js`,
